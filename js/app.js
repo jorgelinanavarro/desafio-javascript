@@ -56,8 +56,8 @@ const mostrarProductos = (products) => {
         productsContainer.appendChild(card);
         const button = document.getElementById(`button${product.id}`);
         button.addEventListener('click',() => {
-            cart (product.id)
-            Swal.fire('Se agrego un producto al carrito')
+            cart (product.id) 
+            Swal.fire('Any fool can use a computer')
         });
     });
 }
