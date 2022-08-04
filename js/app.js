@@ -1,70 +1,66 @@
+//Modal
+const modalContainer = document.getElementById('modal_container');
+const openCart = document.getElementById('open');
+const closeCart = document.getElementById('close');
+const modalCart = document.getElementById('modalCart')
 
-const carrito = document.querySelector("#carrito");
-const cartModalOverlay = document.querySelector(".cart-modal-overlay"); 
-
-/* ABRIR CARRITO */ 
-carrito.addEventListener("click", ()=>{
-    if(cartModalOverlay.classList.contains("open")) {
-        cartModalOverlay.classList.remove("open");
-    } else {
-        cartModalOverlay.classList.add("open");
-    }
+openCart.addEventListener('click', () => {
+    modalContainer.classList.add('modal-active')
+});
+closeCart.addEventListener('click', () => {
+    modalContainer.classList.remove('modal-active')
+});
+modalContainer.addEventListener('click', () => {
+    closeCart.click()
+});
+modalCart.addEventListener('click', (e) => {
+    e.stopPropagation();
 })
 
-/* CERRAR CARRITO */ 
-const closeBtn = document.querySelector("#cerrar-btn");
 
-closeBtn.addEventListener("click", ()=>{
-    cartModalOverlay.classList.remove("open");
-})
-
-/* AGREGAR ELEMENTOS */
-const agregarCarrito= document.getElementsByClassName("agregar-carrito");
-console.log(agregarCarrito)
-for(let boton of agregarCarrito) {
-    boton.addEventListener("click", compilarDatos)
-}
-function compilarDatos(e){
-    let boton = e.target;
-    let producto = boton.parentElement;
-    let prodID = producto.getAttribute("id");
-    let prodName = producto.querySelector("h3").innerText;
-    let precio = producto.querySelector(".precio-producto").innerText;
-    let imagen = producto.querySelector(".img-producto").src;
-    agregarElemento(prodID,prodName,precio,imagen)
-}
-
-function agregarElemento(prodID,prodName,precio,imagen) {
-    let productRow = document.createElement("div");
-    let contenedorProductos = document.querySelector(".filas-productos");
-
-    let elemProducto = `
-        <div class="fila-producto" id="${prodID}">
-            <img class="imagen-carrito" src="${imagen}" />
-            <span>${prodName}</span>
-            <span class="precio-carrito">${precio}</span>
-            <button class="borrar-btn">Borrar</button>
-        </div>
-    `
-    productRow.innerHTML = elemProducto;
-    contenedorProductos.append(productRow);
-    let botonesBorrar = productRow.querySelectorAll(".borrar-btn");
-    for(let boton of botonesBorrar) {
-        boton.addEventListener("click", borrarElemento);
+// Inventario de productos
+class Productos {
+    constructor(id, name, price, img) {
+        this.id = id;
+        this.name = name;
+        this.price = price;
+        this.img = img;
     }
-    cantElementosCarrito();
-    localStorage.setItem("items-contenedor",agregarCarrito)
-    
-}
-function borrarElemento(e) {
-    btn = e.target;
-    btn.parentElement.parentElement.remove();
-    cantElementosCarrito()
 }
 
-function cantElementosCarrito() {
-    let cantidad = document.querySelectorAll(".filas-productos > div");
-    let cantidadCarrito = document.querySelector(".cantidad-carrito");
-    cantidadCarrito.innerText = cantidad.length;
+const products = []
+const prod1 = new Productos("1", "Curso Bolsitas Sorpresa", 3500, "css/img/curso-bolsitas.png");
+const prod2 = new Productos("2", "Curso Letras 3D", 3800, "css/img/curso-letras3d.png");
+const prod3 = new Productos("3", "Curso Pinatas", 3100, "css/img/curso-pinatas.png");
+const prod4 = new Productos("4", "Curso Tarjetas", 3200, "css/img/curso-tarjetas.png");
 
+products.push(prod1, prod2, prod3, prod4);
+
+
+
+/*Crear una función para traer los productos*/
+
+const mostrarProductos = (products) => {
+    const productsContainer = document.getElementById('product-container');
+    products.forEach( product => {
+        const card = document.createElement('card');
+        card.innerHTML += `<div class="card" style="width:18rem;">
+                           <img src="${product.img}" class="card-img-top" alt="...">
+                           <div class="card-body">
+                               <h5 class="card-title">${product.name}</h5>
+                               <p class="card-text">Price:$ ${product.price}</p>
+                               <button class="btn btn-primary" id="button${product.id}">Agregar al carrito</button>
+                           </div>
+                        </div>`
+
+        productsContainer.appendChild(card);
+        const button = document.getElementById(`button${product.id}`);
+        button.addEventListener('click',() => {
+            cart (product.id)
+            Swal.fire('Se agrego un producto al carrito')
+        });
+    });
 }
+
+mostrarProductos(products);
+ 
