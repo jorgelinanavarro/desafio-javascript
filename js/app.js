@@ -57,7 +57,7 @@ const mostrarProductos = (products) => {
         const button = document.getElementById(`button${product.id}`);
         button.addEventListener('click',() => {
             cart (product.id) 
-            Swal.fire('Any fool can use a computer')
+            Swal.fire('Agregaste un producto al carrito')
         });
     });
 }
