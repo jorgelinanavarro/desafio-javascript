@@ -1,10 +1,10 @@
 
-const boton = document.getElementById('btn')
-const contenedorOpinion = document.getElementById('opiniones')
+const boton = document.querySelector('#btn')
+const contenedorOpinion = document.querySelector('#opiniones')
 
 const traerDatos = () => {
     fetch('./datos.json')
-    .then(response => response)
+    .then(response => response.json())
     .then(result => {
         let datos = result;
         datos.forEach(persona => {
@@ -20,9 +20,8 @@ const traerDatos = () => {
     })
 }
 
-traerDatos()
+
 
 boton.onclick = () => {
-    traerDatos()
-
+    traerDatos();
 }
