@@ -1,0 +1,9 @@
+
+[
+    {"nombre":"Yamila Grimi", "edad": 28, "opinion": "100% recomendado, videos muy explicativos."},
+    {"nombre":"Maira Navarro", "edad": 21, "opinion": "Altamente recomendables los cursos, comence como un pasatiempo y termine con un emprendimiento."},
+    {"nombre":"Evelin Gerez", "edad": 26, "opinion": "Recomiendo estos cursos, Jor explica de manera muy detallada."},
+    {"nombre":"Ayelen Ariadno", "edad": 27, "opinion": "Comence los cursos durante la pandemia, ya que mi trabajo se vió muy perjudicado, pero despues de hacer uno de los cursos, volvi a trabajar."},
+    {"nombre":"Claudia Galliano", "edad": 53, "opinion": "Muy buenos cursos, lo recomiendo"},
+    {"nombre":"Maria Elena Lopez", "edad": 48,"opinion": "Buen desarrollo de los cursos" }
+]

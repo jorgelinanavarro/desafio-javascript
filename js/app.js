@@ -19,6 +19,7 @@ modalCart.addEventListener('click', (e) => {
 
 
 // Inventario de productos
+
 class Productos {
     constructor(id, name, price, img) {
         this.id = id;
@@ -35,8 +36,6 @@ const prod3 = new Productos("3", "Curso Pinatas", 3100, "css/img/curso-pinatas.p
 const prod4 = new Productos("4", "Curso Tarjetas", 3200, "css/img/curso-tarjetas.png");
 
 products.push(prod1, prod2, prod3, prod4);
-
-
 
 /*Crear una función para traer los productos*/
 
