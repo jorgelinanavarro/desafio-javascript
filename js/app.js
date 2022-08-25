@@ -1,3 +1,6 @@
+let acumulador = 0
+
+
 //Modal
 const modalContainer = document.getElementById('modal_container');
 const openCart = document.getElementById('open');
@@ -43,12 +46,12 @@ const mostrarProductos = (products) => {
     const productsContainer = document.getElementById('product-container');
     products.forEach( product => {
         const card = document.createElement('card');
-        card.innerHTML += `<div class="card" style="width:18rem;">
-                           <img src="${product.img}" class="card-img-top" alt="...">
+        card.innerHTML += `<div class="card" style="width:18rem; background-color: #e1fce2;">
+                           <img src="${product.img}" class="card-img-top" alt="imagen curso">
                            <div class="card-body">
                                <h5 class="card-title">${product.name}</h5>
                                <p class="card-text">Price:$ ${product.price}</p>
-                               <button class="btn btn-primary" id="button${product.id}">Agregar al carrito</button>
+                               <button class="btn-add btn btn-primary" id="button${product.id}">Agregar al carrito</button>
                            </div>
                         </div>`
 
@@ -62,4 +65,3 @@ const mostrarProductos = (products) => {
 }
 
 mostrarProductos(products);
- 

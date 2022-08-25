@@ -1,5 +1,4 @@
 
-const boton = document.querySelector('#btn')
 const contenedorOpinion = document.querySelector('#opiniones')
 
 const traerDatos = () => {
@@ -8,11 +7,13 @@ const traerDatos = () => {
     .then(result => {
         let datos = result;
         datos.forEach(persona => {
+            const card = document.createElement('card')
             contenedorOpinion.innerHTML += `
-            <div>
-              <h3>${persona.nombre}</h3>
+            <div class="card card-opinion" style="width:18rem; background-color: #e1fce2;">
+              <h2>${persona.nombre}</h2>
               <p>Edad: ${persona.edad}</p>
-              <p>Opinion: ${persona.opinion}</p>
+              <p>${persona.opinion}</p>
+            </div>
             </div>
             `
         
@@ -20,8 +21,4 @@ const traerDatos = () => {
     })
 }
 
-
-
-boton.onclick = () => {
-    traerDatos();
-}
+traerDatos()

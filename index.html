@@ -11,55 +11,72 @@
     <script src="https://kit.fontawesome.com/6f0ad5579e.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg bg-light">
-        <div class="container-fluid navegador" >
-          <a class="navbar-brand" href="#">Nube de Papel</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Inicio</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Sobre mi</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Como comprar</a>
-              </li>
-              <li class="nav-item">
-                <button class="nav-link text-body"  id="open" href="#"><i class="fa-solid fa-cart-shopping"></i> <span id="counter"></span></a>
-                  <div>
-                    <a class="btn-carrito"></a>
-                        <span class="cantidad-carrito">0</span>
-                    </a>
-                </div>
-              </li>
-              
-            </ul>
-          </div>
-        </div>
-      </nav>
-    <main id="product-container">
-
-        <div class="modal-container" id="modal_container">
+  <header class="navbar-nube">
+  <nav class="navbar navbar-expand-lg bg-ligth">
+    <div class="container-fluid navegador" >
+      <a class="navbar-brand" href="index.html">Nube de Papel</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="index.html">Inicio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="sobremi.html">Sobre mi</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="lagentedice.html">La gente dice</a>
+          </li>
+          <li class="nav-item">
+            <button class="nav-link text-body"  id="open" href="#"><i class="fa-solid fa-cart-shopping"></i> <span id="counter"></span></a>
+              <div>
+                <a class="btn-carrito"></a>
+                    <span class="cantidad-carrito">0</span>
+                </a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
+  <main id="product-container">
+    <div class="modal-container" id="modal_container">
             <div id="modalCart" class="modal-cart">
               <button id="close" class="btn btn-danger btn-sm">X</button>
                     <h3 id="cartTitle">Carrito</h3>
                 <div id="cart-container"></div>
                 <div class="total">
-                  <h1 class="cart-total"></h1>
+                  <h1 class="cart-total">Total</h1>
+                  <span id="total-carrito">$0</span>
                 </div>
             </div>
+          </div>
+  </main>
+    <footer class="footer">
+      <div class="grupo-1">
+        <div class="box">
+          <figure>
+            <img src="./css/img/logo-nube.png" alt="logo nube">
+          </figure>
         </div>
-  
-        
-    </main>
-    <footer>
-      <button id="btn">Ver Opiniones</button>
-      <div id="opiniones"></div>
-    
+        <div class="box">
+          <h2 class="sobreMi">"Los sueños se hacen realidad cuando decides luchar por ellos"</h2>
+        </div>
+        <div class="box">
+          <h1 class="sobreMi">Siguenos</h1>
+          <div class="redSocial">
+            <a href="#" class="fa fa-facebook"></a>
+            <a href="#" class="fa fa-instagram"></a>
+            <a href="#" class="fa fa-whatsapp"></a>
+          </div>
+        </div>
+      </div>
+      <div class="grupo-2">
+        <small>&copy; 2022 <b>Nube de Papel</b> -Todos los derechos reservados</small>
+      </div>
     </footer>
 
 
