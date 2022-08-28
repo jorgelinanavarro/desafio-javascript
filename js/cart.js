@@ -14,28 +14,31 @@ const cart = (productId) => {
                          <button class="btn btn-danger btn-sm" id="delete${product.id}" >X</button>
                          `
         cartContainer.appendChild(div);
+        
         let buttonEliminar = document.getElementById(`delete${product.id}`);
-        buttonEliminar.addEventListener('click', (e) => {
-            deleteProduct(e);
-            Swal.fire('Eliminaste un producto del carrito')
-        })
-        /*SUMA PRODUCTOS Y DA TOTAL */
-        totalCarrito.innerText = shoppingCart.reduce((acc,product) => acc+ product.price, 0)
+         buttonEliminar.addEventListener('click', (e) => {
+             deleteProduct(e);
+             Swal.fire('Eliminaste un producto del carrito');
+             cantElementosCarrito()
+            }
+            )
+            totalCarrito.innerText = shoppingCart.reduce((acc,product) => acc + product.price, 0)
     }
     mostrar();
     cantElementosCarrito();
+
 }
 
 /* ELIMINAR PRODUCTOS */
-function deleteProduct(e){
-    let btnClicked = e.target;
-    btnClicked.parentElement.remove();
-}
+    function deleteProduct(e){
+       let btnClicked = e.target;
+       btnClicked.parentElement.remove();
+       }
 
 /* CONTADOR CARRITO */
-function cantElementosCarrito() {
-    let cantidad = document.querySelector(".cantidad-carrito");
+   function cantElementosCarrito() {
+     let cantidad = document.querySelector(".cantidad-carrito");
     cantidad.innerText = shoppingCart.length;
-}
+ }
 
 

@@ -42,8 +42,9 @@
   
   .modal-cart{
     width: 50rem;
-    height: 30rem;
+    height: 50rem;
     background-color: #e1fce2;
+    overflow-y: scroll;
   }
   
   #cartTitle{

@@ -1,5 +1,3 @@
-let acumulador = 0
-
 
 //Modal
 const modalContainer = document.getElementById('modal_container');
@@ -59,7 +57,7 @@ const mostrarProductos = (products) => {
         const button = document.getElementById(`button${product.id}`);
         button.addEventListener('click',() => {
             cart (product.id) 
-            Swal.fire('Agregaste un producto al carrito')
+            Swal.fire('Agregaste un producto al carrito');
         });
     });
 }
